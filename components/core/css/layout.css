@@ -15,6 +15,7 @@
             flex: auto;
     min-height: 100vh;
     min-width: 0;
+    background:#d0d9ef;
 }
 
 .air__layout.air__layout--hasSider {
