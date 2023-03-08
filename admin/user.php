@@ -47,6 +47,7 @@
                                                             <th>password</th>
                                                             <th>Current_Status</th>
                                                             <th>Status</th>
+                                                            <th>Membership Status</th>
                                                             <th class="text-center">Action</th>
                                                         </tr>
                                                     </thead>
@@ -74,6 +75,12 @@
                                                                         <a href="?status=0&sid=<?php echo $row['id']; ?>"><button class="btn btn-danger"> Make Deactive</button></a>
                                                                     <?php } else { ?>
                                                                         <a href="?status=1&sid=<?php echo $row['id']; ?>"><button class="btn btn-success"> Make Active</button></a>
+                                                                    <?php } ?>
+                                                                </td>
+                                                                <td><?php if ($row['membership_status'] == 1) { ?>
+                                                                        <a href="?membership_status=0&sid=<?php echo $row['id']; ?>"><button class="btn btn-danger"> Cancel Membership</button></a>
+                                                                    <?php } else { ?>
+                                                                        <a href="?membership_status=1&sid=<?php echo $row['id']; ?>"><button class="btn btn-success"> Approve Membership</button></a>
                                                                     <?php } ?>
                                                                 </td>
                                                                 <td class="text-center">
@@ -104,6 +111,18 @@
                                 $con->query("update user set status=" . $status . " where id=" . $id . "");
                                 echo '<script type="text/javascript">';
                                 echo "setTimeout(function () { swal({title: 'User Status', text: 'User Status Update Successfully', type: 'success', confirmButtonClass: 'btn-success', confirmButtonText: 'OK', },function() {window.location = 'user.php';});";
+                                echo '}, 1000);</script>';
+                            }
+                            ?>
+
+                            <?php
+                            if (isset($_GET['membership_status'])) {
+                                $status = $_GET['membership_status'];
+                                $id = $_GET['sid'];
+
+                                $con->query("update user set membership_status=" . $status . " where id=" . $id . "");
+                                echo '<script type="text/javascript">';
+                                echo "setTimeout(function () { swal({title: 'User Status', text: 'User Membership Status Update Successfully', type: 'success', confirmButtonClass: 'btn-success', confirmButtonText: 'OK', },function() {window.location = 'user.php';});";
                                 echo '}, 1000);</script>';
                             }
                             ?>

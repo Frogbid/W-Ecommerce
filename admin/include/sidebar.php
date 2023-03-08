@@ -47,7 +47,7 @@ if (!empty($_SESSION['username'])) {
             </a>
             <div class="air__menuLeft__container air__customScroll">
                 <ul class="air__menuLeft__list">
-                    <?php if ($username == 0 OR $username == 1 OR $username == 2) { ?>
+                    <?php if ($username == 0 or $username == 1 or $username == 2) { ?>
                         <li class="air__menuLeft__category">
                             <span>Dashboards</span>
                         </li>
@@ -57,96 +57,110 @@ if (!empty($_SESSION['username'])) {
                                 <span>Dashboards</span>
                             </a>
                         </li>
+                        <li class="air__menuLeft__item">
+                            <a href="reports.php" class="air__menuLeft__link">
+                                <i class="fe fe-database air__menuLeft__icon"></i>
+                                <span>Reports</span>
+                            </a>
+                        </li>
                         <?php
                     }
-                    if ($username == 0 OR $username == 1){
-                    ?>
-                    <li class="air__menuLeft__category">
-                        <span>Product Info</span>
-                    </li>
-                    <li class="air__menuLeft__item air__menuLeft__submenu">
-                        <a href="javascript: void(0)" class="air__menuLeft__link">
-                            <i class="fa fa-bullhorn"></i>
-                            <span>Catagory</span>
-                        </a>
-                        <ul class="air__menuLeft__list">
-                            <li class="air__menuLeft__item">
-                                <a href="category.php" class="air__menuLeft__link">
-                                    <span>Add Category</span>
-                                </a>
-                            </li>
-                            <li class="air__menuLeft__item">
-                                <a href="categorylist.php" class="air__menuLeft__link">
-                                    <span>Category List</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="air__menuLeft__item air__menuLeft__submenu">
-                        <a href="javascript: void(0)" class="air__menuLeft__link">
-                            <i class="fa fa-qq"></i>
-                            <span>Subcategory</span>
-                        </a>
-                        <ul class="air__menuLeft__list">
-                            <li class="air__menuLeft__item">
-                                <a href="subcategory.php" class="air__menuLeft__link">
-                                    <span>Add Subcategory</span>
-                                </a>
-                            </li>
-                            <li class="air__menuLeft__item">
-                                <a href="subcategorylist.php" class="air__menuLeft__link">
-                                    <span>Subcategory List</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="air__menuLeft__item air__menuLeft__submenu">
-                        <a href="javascript: void(0)" class="air__menuLeft__link">
-                            <i class="fe fe-shopping-cart"></i>
-                            <span>Product</span>
-                        </a>
-                        <ul class="air__menuLeft__list">
-                            <li class="air__menuLeft__item">
-                                <a href="product.php" class="air__menuLeft__link">
-                                    <span>Add Product</span>
-                                </a>
-                            </li>
-                            <li class="air__menuLeft__item">
-                                <a href="productlist.php" class="air__menuLeft__link">
-                                    <span>Product List</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                    if ($username == 0 or $username == 1) {
+                        ?>
+                        <li class="air__menuLeft__category">
+                            <span>Product Info</span>
+                        </li>
+                        <li class="air__menuLeft__item air__menuLeft__submenu">
+                            <a href="javascript: void(0)" class="air__menuLeft__link">
+                                <i class="fa fa-bullhorn"></i>
+                                <span>Catagory</span>
+                            </a>
+                            <ul class="air__menuLeft__list">
+                                <li class="air__menuLeft__item">
+                                    <a href="category.php" class="air__menuLeft__link">
+                                        <span>Add Category</span>
+                                    </a>
+                                </li>
+                                <li class="air__menuLeft__item">
+                                    <a href="categorylist.php" class="air__menuLeft__link">
+                                        <span>Category List</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="air__menuLeft__item air__menuLeft__submenu">
+                            <a href="javascript: void(0)" class="air__menuLeft__link">
+                                <i class="fa fa-qq"></i>
+                                <span>Subcategory</span>
+                            </a>
+                            <ul class="air__menuLeft__list">
+                                <li class="air__menuLeft__item">
+                                    <a href="subcategory.php" class="air__menuLeft__link">
+                                        <span>Add Subcategory</span>
+                                    </a>
+                                </li>
+                                <li class="air__menuLeft__item">
+                                    <a href="subcategorylist.php" class="air__menuLeft__link">
+                                        <span>Subcategory List</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="air__menuLeft__item air__menuLeft__submenu">
+                            <a href="javascript: void(0)" class="air__menuLeft__link">
+                                <i class="fe fe-shopping-cart"></i>
+                                <span>Product</span>
+                            </a>
+                            <ul class="air__menuLeft__list">
+                                <li class="air__menuLeft__item">
+                                    <a href="product.php" class="air__menuLeft__link">
+                                        <span>Add Product</span>
+                                    </a>
+                                </li>
+                                <li class="air__menuLeft__item">
+                                    <a href="productlist.php" class="air__menuLeft__link">
+                                        <span>Product List</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
                         <?php
                     }
-                    if ($username == 0 OR $username == 2){
-                    ?>
-                    <li class="air__menuLeft__item air__menuLeft__submenu">
-                        <a href="javascript: void(0)" class="air__menuLeft__link">
-                            <i class="fe fe-hard-drive"></i>
-                            <span>Product Order</span>
-                        </a>
-                        <ul class="air__menuLeft__list">
-                            <li class="air__menuLeft__item">
-                                <a href="order.php" class="air__menuLeft__link">
-                                    <span>Pending Order</span>
-                                </a>
-                            </li>
-                            <li class="air__menuLeft__item">
-                                <a href="orders.php" class="air__menuLeft__link">
-                                    <span>Complete Order</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class=" air__menuLeft__item">
-                        <a href="user.php" class="air__menuLeft__link">
-                            <i class="fa fa-child"></i>
-                            <span>Customer</span>
-                        </a>
-                    </li>
+                    if ($username == 0 or $username == 2) {
+                        ?>
+                        <li class="air__menuLeft__item air__menuLeft__submenu">
+                            <a href="javascript: void(0)" class="air__menuLeft__link">
+                                <i class="fe fe-hard-drive"></i>
+                                <span>Product Order</span>
+                            </a>
+                            <ul class="air__menuLeft__list">
+                                <li class="air__menuLeft__item">
+                                    <a href="order.php" class="air__menuLeft__link">
+                                        <span>Pending Order</span>
+                                    </a>
+                                </li>
+                                <li class="air__menuLeft__item">
+                                    <a href="orders.php" class="air__menuLeft__link">
+                                        <span>Complete Order</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class=" air__menuLeft__item">
+                            <a href="user.php" class="air__menuLeft__link">
+                                <i class="fa fa-child"></i>
+                                <span>Customer</span>
+                            </a>
+                        </li>
+
+                        <li class=" air__menuLeft__item">
+                            <a href="coupons.php" class="air__menuLeft__link">
+                                <i class="fa fa-tag"></i>
+                                <span>Coupons</span>
+                            </a>
+                        </li>
+
                         <?php
                     }
                     ?>
